@@ -11,20 +11,6 @@ def selenideVersion = "7.14.0",
     junitVersion = "5.10.1",
     slf4jVersion = "2.0.17"
 
-allure{
-    report { //секция репорта
-        version.set("2.38.1")
-    }
-    adapter { // отвечает за появление папочку build/allure-results
-        aspectjWeaver.set(true) // обработка анотации @Step
-        frameworks {
-            junit5 { //название фреймворка
-                adapterVersion.set("2.33.0") // версия интеграции фреймворка и Allure
-            }
-        }
-    }
-}
-
 dependencies {
     testImplementation (
             "com.codeborne:selenide:$selenideVersion",
@@ -37,6 +23,7 @@ dependencies {
 
 tasks.withType(Test) {
     useJUnitPlatform()
+    systemProperties(System.getProperties())
 
     testLogging {
         lifecycle {

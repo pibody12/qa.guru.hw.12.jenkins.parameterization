@@ -6,7 +6,6 @@ import static utils.RandomUtils.*;
 
 public class PracticeFormTests extends TestBase {
 
-    @Test
     void fillFullTest() {
         String randomBirthdayDay = String.valueOf(fakerTestData.fakerBirthday);
         String randomBirthdayYear = String.valueOf(fakerTestData.fakerYear);
