@@ -1,6 +1,7 @@
 package pages.components;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
@@ -12,7 +13,7 @@ public class RegistrationResultComponent {
     private SelenideElement titleModalWindow = $("#example-modal-sizes-title-lg");
     private SelenideElement tableInModalWindow = $(".table-responsive");
 
-
+    @Step("Проверка наличия готовой формы")
     public RegistrationResultComponent checkModalForm(){
         modalWindow.should(appear);
         titleModalWindow.shouldHave(text("Thanks for submitting the form"));
@@ -20,6 +21,7 @@ public class RegistrationResultComponent {
         return this;
     }
 
+    @Step("Проверяем, что поле \"{key}\" содерджит результат \"{value}\"")
     public RegistrationResultComponent checkKeyValue(String key, String value){
         tableInModalWindow.$(byText(key)).parent()
                 .shouldHave(text(value));
