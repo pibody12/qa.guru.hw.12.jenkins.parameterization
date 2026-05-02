@@ -2,6 +2,8 @@ package pages.components;
 
 import com.codeborne.selenide.SelenideElement;
 
+import java.time.format.DateTimeFormatter;
+
 import static com.codeborne.selenide.Selenide.$;
 
 public class CalendarComponent {
@@ -12,7 +14,8 @@ public class CalendarComponent {
     public void setDate(String day, String month, String year) {
         monthSelect.selectOption(month);
         yearSelect.selectOption(year);
-        $(".react-datepicker__day--0" + day +
+        String formateDay = String.format("%02d", Integer.parseInt(day));
+        $(".react-datepicker__day--0" + formateDay +
                 ":not(.react-datepicker__day--outside-month)").click();
     }
 }
