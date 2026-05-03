@@ -36,7 +36,7 @@ public class TestBase {
     static String baseUrl = System.getProperty("baseUrl", "https://demoqa.com");
     static String enableRecordVideo = System.getProperty("enableRecordVideo", "true");
     static String userSelenoid = System.getProperty("userSelenoid");
-    static String urlSelenoid = System.getProperty("urlSelenoid", "");
+    static String urlSelenoid = System.getProperty("urlSelenoid", "selenoid.autotests.cloud/wd/hub");
     static String urlVideo = System.getProperty("urlVideo", "selenoid.autotests.cloud/wd/hub");
 
 //    ДЗ
