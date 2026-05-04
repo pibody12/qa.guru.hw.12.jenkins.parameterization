@@ -34,18 +34,10 @@ public class TestBase {
     static String browserVersion = System.getProperty("browserVersion", "128.0");
     static String browserSize = System.getProperty("browserSize", "1920x1080");
     static String baseUrl = System.getProperty("baseUrl", "https://demoqa.com");
-    static String enableRecordVideo = System.getProperty("enableRecordVideo", "true");
     static String userSelenoid = System.getProperty("userSelenoid");
     static String urlSelenoid = System.getProperty("urlSelenoid", "selenoid.autotests.cloud/wd/hub");
-    static String urlVideo = System.getProperty("urlVideo", "selenoid.autotests.cloud/wd/hub");
-
-//    ДЗ
-//1. разные типы браузера +
-//2. разные версии браузера +
-//3. передаль через параметр урл селенойда причем логин/пас отдельно путь отдельно +
-//4. передать через параметр адрес сайта +
-//5. разрешение +
-//6. урл видео тоже передать в параметры
+    static String urlVideo = System.getProperty("urlVideo", "selenoid.autotests.cloud/video/");
+    static Boolean enableRecordVideo = Boolean.parseBoolean(System.getProperty("enableRecordVideo", "true"));
 
     @BeforeAll
     static void setupSelenideConfig() {
